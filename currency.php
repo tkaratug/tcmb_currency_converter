@@ -27,7 +27,7 @@
  * 
  * @author	Turan Karatuğ
  * @version 	v1.0
- * @date 	16.09.2015
+ * @copyright 	16.09.2015
  */
 
 class TCMB_Currency
