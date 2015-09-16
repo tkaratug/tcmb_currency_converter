@@ -2,7 +2,8 @@
 Bu sınıf, TCMB tarafından dağıtılan günlük döviz kurları üzerinden, istenilen kur bilgisini verir ve aynı zamanda çapraz kur dönüşümü yapar.
 
 ## Desteklenen Döviz Kodları
- * USD [Amerikan Doları]
+ * TRY [TÜRK LİRASI]
+ * USD [AMERİKAN DOLARI]
  * AUD [AVUSTRALYA DOLARI]
  * DKK [DANİMARKA KRONU]
  * EUR [EURO]
