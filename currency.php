@@ -25,9 +25,9 @@
  * CNY [ÇİN YUANI]
  * PKR [PAKİSTAN RUPİSİ]
  * 
- * @author		Turan Karatuğ
+ * @author	Turan Karatuğ
  * @version 	v1.0
- * @date 		16.09.2015
+ * @date 	16.09.2015
  */
 
 class TCMB_Currency
@@ -75,8 +75,8 @@ class TCMB_Currency
 		}
 		
 		// Türk Lirası Ekleniyor
-		$this->currency['TRY']['Unit'] 				= 1;
-		$this->currency['TRY']['Isim'] 				= 'TÜRK LİRASI';
+		$this->currency['TRY']['Unit'] 			= 1;
+		$this->currency['TRY']['Isim'] 			= 'TÜRK LİRASI';
 		$this->currency['TRY']['CurrencyName'] 		= 'TRY';
 		$this->currency['TRY']['ForexBuying']		= 1;
 		$this->currency['TRY']['ForexSelling']		= 1;
