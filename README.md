@@ -25,7 +25,7 @@ Bu sınıf, TCMB tarafından dağıtılan günlük döviz kurları üzerinden, i
 ## Kullanımı
 ```
 $kur = new TCMB_currency();
-echo $kur->get_currency('EUR');
+print_r($kur->get_currency('EUR'));
 echo $kur->convert('USD','EUR',100);
 ```
 ## Methodlar
