@@ -6,7 +6,8 @@
  * NOT: Çevrim işlemi sonucu "satış" rakamları üzerinden yapılır.
  *
  * DÖVİZ KODLARI
- * USD [Amerikan Doları]
+ * TRY [TÜRK LİRASI]
+ * USD [AMERİKAN DOLARI]
  * AUD [AVUSTRALYA DOLARI]
  * DKK [DANİMARKA KRONU]
  * EUR [EURO]
