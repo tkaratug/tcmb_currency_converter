@@ -25,7 +25,7 @@ Bu sınıf, TCMB tarafından dağıtılan günlük döviz kurları üzerinden, i
 ## Changelog
 #### v1.0.1
 - Önbellekleme sistemi eklendi. İsteğe bağlı olarak veriler, sınıfa parametre olarak verilen değer kadar önbellekte tutulabilir.
-- convert() methoduna $type parametresi eklendi. Bu parametre 'BanknoteBuying', 'BanknoteSelling', 'ForexBuying' ve 'ForexSelling' değerlerini alabilir. Değer belirtilmezse varsayılan olarak 'BanknoteBuying' değerini alır.
+- convert() methoduna $type parametresi eklendi. Bu parametre 'BanknoteBuying', 'BanknoteSelling', 'ForexBuying' ve 'ForexSelling' değerlerini alabilir. Değer belirtilmezse varsayılan olarak 'ForexBuying' değerini alır.
 
 ## Kullanımı
 ```
@@ -41,5 +41,5 @@ echo 'ForexSelling : ' . $kur->convert('TRY','USD',25, 'ForexSelling');
 ### get_currency($code)
 Bu method parametre olarak 3 karakterden oluşan döviz kodu alır. Verilen koda ait dövizin nakit alış, nakit satış, forex alış, forex satış değerlerini dizi olarak döndürür.
 
-### convert($from, $to, $value, $type = 'BanknoteBuying')
+### convert($from, $to, $value, $type = 'ForexBuying')
 Bu method parametre olarak çevrim yapılacak döviz kodlarını, çevrilecek miktarı ve sonuç tipini alır. `$value` parametresine verilen değeri `$from` parametresine verilen dövizden, `$to` parametresine verilen döviz birimine çevirir.
