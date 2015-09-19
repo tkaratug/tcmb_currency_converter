@@ -3,7 +3,7 @@
  * TCMB_Currency Class
  *
  * TCMB tarafından açıklanan günlük kur bilgilerini erişip çevrim yapabilen php sınıfı.
- * NOT: Çevrim işlemi sonucu "satış" rakamları üzerinden yapılır.
+ * NOT: Çevrim işlemi sonucu "alış" rakamları üzerinden yapılır.
  *
  * =========================
  * DÖVİZ KODLARI
@@ -34,7 +34,7 @@
  * 	  Örnek: $kur = new TCMB_currency(10); 	(XML dosyasındaki veriler 10 dk boyunca önbellekte tutulur.)
  *
  * 2- convert() methoduna $type parametresi eklendi. Bu parametre 'BanknoteBuying', 'BanknoteSelling', 'ForexBuying' ve 'ForexSelling' değerlerini alabilir. 
- *    Değer belirtilmezse varsayılan olarak 'BanknoteBuying' değerini alır.
+ *    Değer belirtilmezse varsayılan olarak 'ForexBuying' değerini alır.
  * ========================= 
  *
  * @author	Turan Karatuğ
@@ -124,7 +124,7 @@ class TCMB_Currency
 	 * @param $type 	string 	(BanknoteBuying|BanknoteSelling|ForexBuying|ForexSelling)
 	 * @return decimal
 	 */
-	public function convert($from, $to, $value, $type = 'BanknoteBuying')
+	public function convert($from, $to, $value, $type = 'ForexBuying')
 	{
 		$deger 	= $value * $this->get_currency($from)[$type];
 		$sonuc	= $deger / $this->get_currency($to)[$type];
