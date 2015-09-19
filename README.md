@@ -22,15 +22,24 @@ Bu sınıf, TCMB tarafından dağıtılan günlük döviz kurları üzerinden, i
  * CNY [ÇİN YUANI]
  * PKR [PAKİSTAN RUPİSİ]
 
+## Changelog
+#### v1.0.1
+- Önbellekleme sistemi eklendi. İsteğe bağlı olarak veriler, sınıfa parametre olarak verilen değer kadar önbellekte tutulabilir.
+- convert() methoduna $type parametresi eklendi. Bu parametre 'BanknoteBuying', 'BanknoteSelling', 'ForexBuying' ve 'ForexSelling' değerlerini alabilir. Değer belirtilmezse varsayılan olarak 'BanknoteBuying' değerini alır.
+
 ## Kullanımı
 ```
-$kur = new TCMB_currency();
-print_r($kur->get_currency('EUR'));
-echo $kur->convert('USD','EUR',100);
+include 'currency.php';
+$kur = new TCMB_currency(10); // 10 dakika önbellekte tutulur
+echo 'Default (BanknoteBuying) : ' . $kur->convert('TRY','USD',25) . '<br>';
+echo 'BanknoteBuying : ' . $kur->convert('TRY','USD',25, 'BanknoteBuying') . '<br>';
+echo 'BanknoteSelling : ' . $kur->convert('TRY','USD',25, 'BanknoteSelling') . '<br>';
+echo 'ForexBuying : ' . $kur->convert('TRY','USD',25, 'ForexBuying') . '<br>';
+echo 'ForexSelling : ' . $kur->convert('TRY','USD',25, 'ForexSelling');
 ```
 ## Methodlar
 ### get_currency($code)
 Bu method parametre olarak 3 karakterden oluşan döviz kodu alır. Verilen koda ait dövizin nakit alış, nakit satış, forex alış, forex satış değerlerini dizi olarak döndürür.
 
-### convert($from, $to, $value)
-Bu method parametre olarak çevrim yapılacak döviz kodlarını ve değeri alır. `$value` parametresine verilen değeri `$from` parametresine verilen dövizden, `$to` parametresine verilen döviz birimine çevirir.
+### convert($from, $to, $value, $type = 'BanknoteBuying')
+Bu method parametre olarak çevrim yapılacak döviz kodlarını, çevrilecek miktarı ve sonuç tipini alır. `$value` parametresine verilen değeri `$from` parametresine verilen dövizden, `$to` parametresine verilen döviz birimine çevirir.
