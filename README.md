@@ -36,6 +36,9 @@ echo 'BanknoteBuying : ' . $kur->convert('TRY','USD',25, 'BanknoteBuying') . '<b
 echo 'BanknoteSelling : ' . $kur->convert('TRY','USD',25, 'BanknoteSelling') . '<br>';
 echo 'ForexBuying : ' . $kur->convert('TRY','USD',25, 'ForexBuying') . '<br>';
 echo 'ForexSelling : ' . $kur->convert('TRY','USD',25, 'ForexSelling');
+
+// Tarih
+echo $kur->getDate();
 ```
 ## Methodlar
 ### get_currency($code)

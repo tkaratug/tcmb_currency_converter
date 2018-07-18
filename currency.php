@@ -97,8 +97,8 @@ class TCMB_Currency
 		}
 		
 		// Türk Lirası Ekleniyor
-		$this->currency['TRY']['Unit'] 			= 1;
-		$this->currency['TRY']['Isim'] 			= 'TÜRK LİRASI';
+		$this->currency['TRY']['Unit'] 				= 1;
+		$this->currency['TRY']['Isim'] 				= 'TÜRK LİRASI';
 		$this->currency['TRY']['CurrencyName'] 		= 'TRY';
 		$this->currency['TRY']['ForexBuying']		= 1;
 		$this->currency['TRY']['ForexSelling']		= 1;
@@ -129,6 +129,16 @@ class TCMB_Currency
 		$deger 	= $value * $this->get_currency($from)[$type];
 		$sonuc	= $deger / $this->get_currency($to)[$type];
 		return round($sonuc,4);
+	}
+
+	/**
+	 * Tarih Bilgisi
+	 * @return string
+	 */
+	public function getDate()
+	{
+		$output = json_decode(json_encode($this->xml), true);
+		return $output['@attributes']['Tarih'];
 	}
 	
 }
