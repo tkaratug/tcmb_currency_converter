@@ -1,0 +1,35 @@
+{
+	"name": "tkaratug/tcmb_currency_converter",
+	"type": "project",
+	"description": "TCMB Currenct Converter",
+	"keywords": ["tcmb","currency","converter","kur çevirici"],
+	"homepage": "https://github.com/tkaratug/tcmb_currency_converter",
+	"license": "MIT",
+	"authors": [
+        {
+            "name": "Turan Karatuğ",
+            "email": "tkaratug@hotmail.com.tr",
+            "homepage": "http://turankaratug.com",
+            "role": "Developer"
+        }
+    ],
+	"require": {
+        "php": ">=7.0.0"
+    },
+	"autoload": {
+		"psr-4": {
+			"Currency\\": "src/"
+		}
+	},
+	"autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+	"config": {
+		"preferred-install": "dist"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^9.1"
+	}
+}

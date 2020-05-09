@@ -22,27 +22,35 @@ Bu sınıf, TCMB tarafından dağıtılan günlük döviz kurları üzerinden, i
  * CNY [ÇİN YUANI]
  * PKR [PAKİSTAN RUPİSİ]
 
+## Kurulum
+```
+$ composer require tkaratug/tcmb_currency_converter
+```
+
+## Kullanımı
+```
+include 'vendor/autoload.php';
+
+use Currency\Converter;
+
+$convert = new Converter(10); // 10 dakika önbellekte tutulur
+
+// 1 USD'nin TL karşılığı olan alış fiyatı 
+$convert->from('USD')->to('TRY')->amount(1)->selling()
+
+// 1 USD'nin TL karşılığı olan satış fiyatı
+$convert->from('USD')->to('TRY')->amount(1)->buying();
+
+// Tarih
+echo $convert->getDate();
+```
+
 ## Changelog
+#### v2.0.0
+- PSR4 autoloading standardına uygun olarak yeniden yazıldı.
+- Testler eklendi.
+
 #### v1.0.1
 - Önbellekleme sistemi eklendi. İsteğe bağlı olarak veriler, sınıfa parametre olarak verilen değer kadar önbellekte tutulabilir.
 - convert() methoduna $type parametresi eklendi. Bu parametre 'BanknoteBuying', 'BanknoteSelling', 'ForexBuying' ve 'ForexSelling' değerlerini alabilir. Değer belirtilmezse varsayılan olarak 'ForexBuying' değerini alır.
 
-## Kullanımı
-```
-include 'currency.php';
-$kur = new TCMB_currency(10); // 10 dakika önbellekte tutulur
-echo 'Default (ForexBuying) : ' . $kur->convert('TRY','USD',25) . '<br>';
-echo 'BanknoteBuying : ' . $kur->convert('TRY','USD',25, 'BanknoteBuying') . '<br>';
-echo 'BanknoteSelling : ' . $kur->convert('TRY','USD',25, 'BanknoteSelling') . '<br>';
-echo 'ForexBuying : ' . $kur->convert('TRY','USD',25, 'ForexBuying') . '<br>';
-echo 'ForexSelling : ' . $kur->convert('TRY','USD',25, 'ForexSelling');
-
-// Tarih
-echo $kur->getDate();
-```
-## Methodlar
-### get_currency($code)
-Bu method parametre olarak 3 karakterden oluşan döviz kodu alır. Verilen koda ait dövizin nakit alış, nakit satış, forex alış, forex satış değerlerini dizi olarak döndürür.
-
-### convert($from, $to, $value, $type = 'ForexBuying')
-Bu method parametre olarak çevrim yapılacak döviz kodlarını, çevrilecek miktarı ve sonuç tipini alır. `$value` parametresine verilen değeri `$from` parametresine verilen dövizden, `$to` parametresine verilen döviz birimine çevirir.
