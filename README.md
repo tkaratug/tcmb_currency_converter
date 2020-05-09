@@ -28,7 +28,7 @@ $ composer require tkaratug/tcmb_currency_converter
 ```
 
 ## Kullanımı
-```
+```php
 include 'vendor/autoload.php';
 
 use Currency\Converter;
