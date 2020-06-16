@@ -46,6 +46,9 @@ echo $convert->getDate();
 ```
 
 ## Changelog
+#### v2.0.1
+- Typed property kullanıldığından, php versiyonu en az 7.4 olarak güncellendi.
+
 #### v2.0.0
 - PSR4 autoloading standardına uygun olarak yeniden yazıldı.
 - Testler eklendi.
